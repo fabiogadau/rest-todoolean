@@ -36,6 +36,7 @@ header {
 
 /* Main content */
 main {
+  height: calc(100% - 100px);
   display: flex;
   flex-direction: column;
 }
@@ -93,6 +94,7 @@ main {
   word-break: normal;
   display: flex;
   justify-content: space-between;
+  overflow-y: auto;
 }
 
 .todo-list .todo:last-child {

@@ -85,22 +85,28 @@ $(document).ready(function() {
   function createTodo(template, newApi, newParent, newInput){
     var newValue = newInput.val().trim();
 
-    // start AJAX call
-    $.ajax({
-      url: newApi,
-      method: 'POST',
-      data: {
-        text: newValue
-      },
-      success: function(){
-        printTodos(template, newApi, newParent)
-
-        newInput.val('');
-      },
-      error: function(){
-        console.log('Error occured while creating content');
-      }
-    }); // end AJAX call
+    // validation in case of empty input
+    if ( newValue != '' ){
+      // start AJAX call
+      $.ajax({
+        url: newApi,
+        method: 'POST',
+        data: {
+          text: newValue
+        },
+        success: function(){
+          printTodos(template, newApi, newParent);
+          
+          newInput.val('');
+        },
+        error: function(){
+          console.log('Error occured while creating content');
+        }
+      }); // end AJAX call
+    }
+    else {
+      alert('Please, enter valid text');
+    }
   };
 
   // Function to remove a todo
