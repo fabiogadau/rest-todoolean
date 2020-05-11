@@ -10,8 +10,32 @@
   <title>Todoolean</title>
 </head>
 <body>
+
+  <!-- General container -->
+  <div id="app">
+    <!-- Header title -->
+    <header>
+      <h1>Todoolean</h1>
+    </header>
+
+    <!-- Main content -->
+    <main>
+      <!-- Input and button to create todo -->
+      <input id="todo-input" type="text" placeholder="Todo">
+      <i id="todo-btn" class="fas fa-pen"></i>
+
+      <!-- Todo list -->
+      <ul class="todo-list"></ul>
+    </main>
+  </div>
   
   <!-- Template Handlebars -->
+  <script id="todo-template" type="text/x-handlebars-template">
+    <li class="todo">
+      {{ todoText }}
+      <i id="remove" class="fas fa-trash" data-id="{{ todoId }}"></i>
+    </li>
+  </script>
 
   <!-- JS -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
