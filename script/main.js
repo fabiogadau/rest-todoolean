@@ -43,7 +43,7 @@ $(document).ready(function() {
   });
 
   // Remove todo by clicking its button
-  $(document).on('click', '#remove', function(){
+  $(document).on('click', '.remove', function(){
     deleteTodo(template, todoAPI, todoList, $(this));
   });
   
@@ -83,7 +83,7 @@ $(document).ready(function() {
   
   // Function to create a new todo
   function createTodo(template, newApi, newParent, newInput){
-    var newValue = newInput.val().trim().toLowerCase();
+    var newValue = newInput.val().trim();
 
     // start AJAX call
     $.ajax({
